@@ -1,7 +1,13 @@
 .myheight{
     height: 500px;  
+    position: relative;
 
 }
+#title{
+  top: 80%;
+  left:5%;
+}
+
 .myheight img{
   height: 100%;
   width: 100%;
@@ -11,3 +17,6 @@
   width: 100%;
 }
 
+.d_mynone{
+  display: none;
+}
