@@ -48,3 +48,10 @@ for(let index=0; index< imgArr.length; index++){
 document.getElementById("img_sec").innerHTML = contenutoRowSec;
 
 document.getElementById("item-1").classList.add("d-block");
+
+
+let freccia = document.getElementById("up");
+
+
+
+
