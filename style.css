@@ -1,11 +1,13 @@
 .myheight{
-    width: 700px;
-   
+    height: 500px;  
+
 }
 .myheight img{
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
-.mystyle img{
-   height:calc(700px /5);
+.mystyle{
+   height:calc(500px /5);
+   width: 100%;
 }
 
