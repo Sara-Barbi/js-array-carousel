@@ -40,7 +40,7 @@ document.getElementById("img_principale").innerHTML = contenutoRowPrinc ;
 
 for(let index=0; index< imgArr.length; index++){
     contenutoRowSec +=`
-    <div class="col" >
+    <div>
     <img id="img-active" class="item mystyle img-fluid" src="${imgArr[index]}"></img>
     </div>`;
 }
