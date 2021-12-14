@@ -24,8 +24,8 @@ const text = [
 
 let contenutoRowPrinc = '';
 let contenutoRowSec = '';
-let elementActive = 0;
-let testoTitolo = '';
+
+
 
 for(let ii=0; ii < imgArr.length; ii++){
     contenutoRowPrinc +=`
