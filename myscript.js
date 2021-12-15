@@ -33,7 +33,7 @@ for(let ii=0; ii < imgArr.length; ii++){     //faccio un ciclo perchè ho bisogn
         <img id="img-active" class="item" src="${imgArr[ii]}"></img>     
         <div class="position-absolute text-white" id="title"><h3> ${title [ii]} </h3><p> ${text [ii]} </p> </div>
     </div>`;
-}
+};
 
 document.getElementById("img_principale").innerHTML = contenutoRowPrinc ;           //lo metto al posto de div del mio html
 
@@ -43,7 +43,7 @@ for(let index=0; index< imgArr.length; index++){                                
     <div>
       <img id="img-active" class="item mystyle img-fluid" src="${imgArr[index]}"></img>
     </div>`;
-}
+};
 
 document.getElementById("img_sec").innerHTML = contenutoRowSec;                    //lo metto al posto de div del mio html
 
