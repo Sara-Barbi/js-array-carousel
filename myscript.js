@@ -24,10 +24,10 @@ const text = [
 
 let contenutoRowPrinc = '';
 let contenutoRowSec = '';
-let elementActive = 0;
+let elementActive = 1;                       //se parte da 0 non funziona
 
 
-for(let ii=0; ii < imgArr.length; ii++){
+for(let ii=0; ii < imgArr.length; ii++){     //faccio un ciclo perchè ho bisogno di clonare questo div con img grande e testo
     contenutoRowPrinc +=`
     <div class=" myheight d_mynone" id="item-${ii+1}">
         <img id="img-active" class="item" src="${imgArr[ii]}"></img>     
@@ -35,27 +35,46 @@ for(let ii=0; ii < imgArr.length; ii++){
     </div>`;
 }
 
-document.getElementById("img_principale").innerHTML = contenutoRowPrinc ;
+document.getElementById("img_principale").innerHTML = contenutoRowPrinc ;           //lo metto al posto de div del mio html
 
 
-for(let index=0; index< imgArr.length; index++){
+for(let index=0; index< imgArr.length; index++){                                    //creo un div per le img piccole
     contenutoRowSec +=`
     <div>
       <img id="img-active" class="item mystyle img-fluid" src="${imgArr[index]}"></img>
     </div>`;
 }
 
-document.getElementById("img_sec").innerHTML = contenutoRowSec;
+document.getElementById("img_sec").innerHTML = contenutoRowSec;                    //lo metto al posto de div del mio html
 
 document.getElementById("item-1").classList.add("d-block");
-let elementActive = document.getElementById("item-"+elementActive)
 
-let frecciaUp = document.getElementById("down");
-frecciaUp.addEventListener('click',function(){
-    elementActive--
-    document.getElementById("item-1").classList.add("d-none");
-    document.getElementById("item-2").classList.add("d-block");
-})
+
+
+let itemActive = document.getElementById('item-'+elementActive);
+itemActive.classList.add("d-block");
+
+let frecciaUp = document.getElementById("up");
+let frecciaDown = document.getElementById("down");
+
+
+
+frecciaUp.addEventListener('click', function() {
+    elementActive--;
+    itemActive.classList.remove('d-block');
+    itemActive = document.getElementById('item-'+elementActive);
+    itemActive.classList.add('d-block');
+    
+});
+
+frecciaDown.addEventListener('click', function(){
+    elementActive++;
+    itemActive.classList.remove('d-block');
+    itemActive = document.getElementById('item-'+elementActive);
+    itemActive.classList.add('d-block');
+    
+});
+
 
 
 
