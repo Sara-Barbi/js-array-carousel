@@ -24,7 +24,7 @@ const text = [
 
 let contenutoRowPrinc = '';
 let contenutoRowSec = '';
-
+let elementActive = 0;
 
 
 for(let ii=0; ii < imgArr.length; ii++){
@@ -41,16 +41,22 @@ document.getElementById("img_principale").innerHTML = contenutoRowPrinc ;
 for(let index=0; index< imgArr.length; index++){
     contenutoRowSec +=`
     <div>
-    <img id="img-active" class="item mystyle img-fluid" src="${imgArr[index]}"></img>
+      <img id="img-active" class="item mystyle img-fluid" src="${imgArr[index]}"></img>
     </div>`;
 }
 
 document.getElementById("img_sec").innerHTML = contenutoRowSec;
 
 document.getElementById("item-1").classList.add("d-block");
+let elementActive = document.getElementById("item-"+elementActive)
 
+let frecciaUp = document.getElementById("down");
+frecciaUp.addEventListener('click',function(){
+    elementActive--
+    document.getElementById("item-1").classList.add("d-none");
+    document.getElementById("item-2").classList.add("d-block");
+})
 
-let freccia = document.getElementById("up");
 
 
 
