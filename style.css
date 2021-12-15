@@ -8,6 +8,9 @@
   left:5%;
 }
 
+.active{
+  filter: brightness(100%);
+}
 
 
 
@@ -18,7 +21,9 @@
 .mystyle{
   height:calc(500px /5);
   width: 100%;
+  filter: brightness(50%);
 }
+
 
 .d_mynone{
   display: none;
@@ -28,12 +33,14 @@
   left: 41%;
   font-size: 25px;
   color: rgba(255, 255, 255, 0.433);
+  z-index: 1;
 }
 #down{
   bottom: 5px;
   left: 41%;
   font-size: 25px;
   color: rgba(255, 255, 255, 0.533);
+  z-index: 1;
 }
 #up:hover, #down:hover{
   color: rgb(255, 255, 255);

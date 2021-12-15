@@ -30,7 +30,7 @@ let elementActive = 1;                       //se parte da 0 non funziona
 for(let ii=0; ii < imgArr.length; ii++){     //faccio un ciclo perchè ho bisogno di clonare questo div con img grande e testo
     contenutoRowPrinc +=`
     <div class=" myheight d_mynone" id="item-${ii+1}">
-        <img id="img-active" class="item" src="${imgArr[ii]}"></img>     
+        <img  src="${imgArr[ii]}"></img>     
         <div class="position-absolute text-white" id="title"><h3> ${title [ii]} </h3><p> ${text [ii]} </p> </div>
     </div>`;
 };
@@ -41,7 +41,7 @@ document.getElementById("img_principale").innerHTML = contenutoRowPrinc ;       
 for(let index=0; index< imgArr.length; index++){                                    //creo un div per le img piccole
     contenutoRowSec +=`
     <div>
-      <img id="img-active" class="item mystyle img-fluid" src="${imgArr[index]}"></img>
+      <img  class="item mystyle img-fluid" id="myitem" src="${imgArr[index]}"></img>
     </div>`;
 };
 
@@ -50,23 +50,14 @@ document.getElementById("img_sec").innerHTML = contenutoRowSec;                 
 document.getElementById("item-1").classList.add("d-block");
 
 
-
 let itemActive = document.getElementById('item-'+elementActive);
+let ite = document.getElementById("myitem");
 itemActive.classList.add("d-block");
 
 let frecciaUp = document.getElementById("up");
 let frecciaDown = document.getElementById("down");
 
 
-frecciaUp.addEventListener('click', function() {
-    elementActive--;
-    itemActive.classList.remove('d-block');
-    itemActive = document.getElementById('item-'+elementActive);
-    itemActive.classList.add('d-block');
-    if(elementActive < 0){
-        elementActive = 4;
-    }
-});
 
 frecciaDown.addEventListener('click', function(){
     elementActive++;
@@ -79,7 +70,15 @@ frecciaDown.addEventListener('click', function(){
      
 });
 
-
+frecciaUp.addEventListener('click', function(){
+    elementActive--;
+    itemActive.classList.remove('d-block');
+    itemActive = document.getElementById('item-'+elementActive);
+    itemActive.classList.add("d-block");
+    if(elementActive < 0){
+        elementActive = 4;
+    }
+});
 
 
 
