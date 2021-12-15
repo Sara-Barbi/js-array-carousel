@@ -58,22 +58,30 @@ let frecciaUp = document.getElementById("up");
 let frecciaDown = document.getElementById("down");
 
 
-
 frecciaUp.addEventListener('click', function() {
     elementActive--;
     itemActive.classList.remove('d-block');
     itemActive = document.getElementById('item-'+elementActive);
     itemActive.classList.add('d-block');
-    
+    if(elementActive < 0){
+        elementActive = 4;
+    }
 });
 
 frecciaDown.addEventListener('click', function(){
     elementActive++;
     itemActive.classList.remove('d-block');
     itemActive = document.getElementById('item-'+elementActive);
-    itemActive.classList.add('d-block');
-    
+    itemActive.classList.add("d-block");
+    if(elementActive > 4){
+        elementActive = 0;
+    }
+     
 });
+
+
+
+
 
 
 
